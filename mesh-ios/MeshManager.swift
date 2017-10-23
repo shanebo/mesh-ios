@@ -8,23 +8,14 @@
 
 import Foundation
 
-class MeshManager: NSObject {
-    static var sharedManager = MeshManager()
+public class MeshManager: NSObject {
+    public static var sharedManager = MeshManager()
 
-    private var _controller: MeshController?
-    var controller: MeshController {
-        get {
-            if _controller == nil {
-                _controller = MeshController()
-            }
-            
-            return _controller!
-        }
-    }
+    public var controller = MeshController()
     var reachability = Reachability()!
     var online = true
     
-    override init() {
+    public override init() {
         super.init()
         
         reachability.whenReachable = { reachability in
@@ -47,7 +38,7 @@ class MeshManager: NSObject {
         }
     }
     
-    func emit(_ action: String) {
+    public func emit(_ action: String) {
         mesh(event: "_emit", type: "\"\(action)\"")
     }
     

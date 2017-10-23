@@ -8,10 +8,10 @@
 
 import WebKit
 
-class MeshController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
+public class MeshController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
     var appWebView: WKWebView?
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         let config = WKWebViewConfiguration()
@@ -31,7 +31,7 @@ class MeshController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         view.addSubview(appWebView!)
     }
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         let sentData = message.body as! NSDictionary
         
         let controller = sentData["controller"] as! String
@@ -60,11 +60,11 @@ class MeshController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         appWebView!.evaluateJavaScript("\(callbackString), \(NSString(data:generatedJSONData, encoding:String.Encoding.utf8.rawValue)!))")
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         MeshManager.sharedManager.emit("ready")
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

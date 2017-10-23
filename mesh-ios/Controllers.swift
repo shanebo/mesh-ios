@@ -12,7 +12,7 @@ struct Action {
     var call: (_ arguments: [Any]) -> Void
 }
 
-class Controllers: NSObject {
+public class Controllers: NSObject {
     private static var _manager: Controllers?
     static var manager: Controllers {
         get {
@@ -31,7 +31,7 @@ class Controllers: NSObject {
         super.init()
     }
     
-    func register(_ controllerName: String, _ actionName: String, caller: @escaping (_ arguments: [Any]) -> Void) {
+    public func register(_ controllerName: String, _ actionName: String, caller: @escaping (_ arguments: [Any]) -> Void) {
         let action = Action(call: caller)
         
         if controllers[controllerName] == nil {
