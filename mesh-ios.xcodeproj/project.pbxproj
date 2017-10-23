@@ -12,6 +12,7 @@
 		D858763D1F9D873A00B54EC7 /* MeshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D858763C1F9D873A00B54EC7 /* MeshController.swift */; };
 		D858763F1F9D876200B54EC7 /* MeshManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D858763E1F9D876200B54EC7 /* MeshManager.swift */; };
 		D85876411F9D879500B54EC7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85876401F9D879500B54EC7 /* Reachability.swift */; };
+		D85876441F9D8D0E00B54EC7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85876431F9D8D0E00B54EC7 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D858763C1F9D873A00B54EC7 /* MeshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshController.swift; sourceTree = "<group>"; };
 		D858763E1F9D876200B54EC7 /* MeshManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshManager.swift; sourceTree = "<group>"; };
 		D85876401F9D879500B54EC7 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		D85876431F9D8D0E00B54EC7 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,17 @@
 				D858763C1F9D873A00B54EC7 /* MeshController.swift */,
 				D858763E1F9D876200B54EC7 /* MeshManager.swift */,
 				D85876401F9D879500B54EC7 /* Reachability.swift */,
+				D85876421F9D8CCD00B54EC7 /* Plugins */,
 			);
 			path = "mesh-ios";
+			sourceTree = "<group>";
+		};
+		D85876421F9D8CCD00B54EC7 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				D85876431F9D8D0E00B54EC7 /* Logger.swift */,
+			);
+			path = Plugins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85876441F9D8D0E00B54EC7 /* Logger.swift in Sources */,
 				D858763F1F9D876200B54EC7 /* MeshManager.swift in Sources */,
 				D858763D1F9D873A00B54EC7 /* MeshController.swift in Sources */,
 				D85876411F9D879500B54EC7 /* Reachability.swift in Sources */,

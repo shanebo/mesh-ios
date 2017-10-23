@@ -13,9 +13,23 @@ struct Action {
 }
 
 class Controllers: NSObject {
-    static var manager = Controllers()
+    private static var _manager: Controllers?
+    static var manager: Controllers {
+        get {
+            if _manager == nil {
+                _manager = Controllers()
+                _manager!.register("Logger", "log") { Logger.sharedInstance.log($0) }
+            }
+            
+            return _manager!
+        }
+    }
     
     private var controllers = [String: [String: Action]]()
+    
+    override init() {
+        super.init()
+    }
     
     func register(_ controllerName: String, _ actionName: String, caller: @escaping (_ arguments: [Any]) -> Void) {
         let action = Action(call: caller)
